@@ -2,14 +2,37 @@ body {
   margin: 0;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   background-color: #525659;
 }
 
+.whiteBackground {
+  background-color: white;
+}
+
+#downloadButton {
+  right: 0;
+  height: 40px;
+  border: none;
+  padding-left: 20px;
+  position: absolute;
+  padding-right: 20px;
+  background-color: #357ABB;
+  border-bottom-left-radius: 10px;
+}
+
+#downloadButton a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
 #pdf {
   padding: 0 2%;
-  margin: 20px 0;
+  margin: 20px 10px;
   max-width: 900px;
+  position: relative;
   border-radius: 5px;
   padding-bottom: 1%;
   background-color: white;
@@ -17,17 +40,15 @@ body {
 }
 
 .icon {
-  height: 20px;
-  font-size: 15px;
-  display: inline-block;
-  vertical-align:middle;
+  height: 25px;
+  vertical-align: top;
+  font-size: 18px;
 }
 
 .topDetail {
   height: 20px;
   color: black;
   margin-top: 0;
-  vertical-align:middle;
   display: inline-block;
 }
 
@@ -41,11 +62,28 @@ body {
 }
 
 .subsectionHeader {
-  flex: 1;
-  display: flex;
+  width: 100%;
   margin-bottom: 5px;
-  flex-direction: row;
-  justify-content: space-between;
+}
+/*
+.subsectionHeader h3 {
+  display: inline;
+  width: 50%;
+}
+
+.subsectionHeader h4 {
+  width: 100%;
+  background-color: red;
+} */
+
+.headerSection {
+  width: 49%;
+  font-size: 16px;
+  display: inline-block;
+}
+
+.alignRight {
+  text-align: right;
 }
 
 h1 {
@@ -70,19 +108,18 @@ h2 {
 h3 {
   margin: 0;
   color: #2C2C2C;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 h4 {
   margin: 0;
   color: #3D3D3D;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
 }
 
 ul {
   margin-top: 5px;
-  padding-left: 2%;
 }
 
 li {
@@ -94,11 +131,15 @@ table {
   font-size: 14px;
 }
 
+.listPadding {
+  padding-inline-start: 20px;
+}
+
 td {
   color: #5F5F5F;
   font-weight: 400;
 }
 
-td b {
+td > b {
   color: black
 }

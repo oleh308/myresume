@@ -6,9 +6,15 @@
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no" />
   </head>
   <body>
     <main id="pdf">
+      <button id="downloadButton">
+        <a href="/resume" download>
+          Download
+        </a>
+      </button>
       <h1>OLEH BUSKO</h1>
       <section>
         <p></p>
@@ -31,13 +37,17 @@
         <h2>WORK EXPERIENCE</h2>
         <section>
           <div class="subsectionHeader">
-            <h3>Software Developer</h3>
-            <h4>Apr 2018 - Present</h4>
+            <div class="headerSection">
+              <h3>Software Developer</h3>
+            </div>
+            <div class="headerSection">
+              <h4 class="alignRight">Apr 2018 - Present</h4>
+            </div>
           </div>
           <div class="subsectionHeader">
             <h4>OrbitX, London UK</h4>
           </div>
-          <ul>
+          <ul class="listPadding">
             <li>Implemented front side applications for multiple clients using <b>React.js</b> and <b>React Native</b>.</li>
             <li>Implemented back end applications with <b>Node.js</b> combined with <b>MongoDB</b>, <b>Mongoose</b> and <b>TypeScript</b>.</li>
             <li>Deployed applications to AWS using <b>AWS Pipeline</b>, <b>EC2</b> and <b>EKS</b>.</li>
@@ -47,8 +57,12 @@
         </section>
         <section>
           <div class="subsectionHeader">
-            <h3>iOS Software Developer - Intern</h3>
-            <h4>Jun 2017 - Aug 2017</h4>
+            <div class="headerSection">
+              <h3>iOS Software Developer - Intern</h3>
+            </div>
+            <div class="headerSection">
+              <h4 class="alignRight">Jun 2017 - Aug 2017</h4>
+            </div>
           </div>
           <div class="subsectionHeader">
             <h4>SoftBistro, Lviv Ukraine</h4>
@@ -61,8 +75,12 @@
         </section>
         <section>
           <div class="subsectionHeader">
-            <h3>Packer</h3>
-            <h4>Apr 2015 - Aug 2015</h4>
+            <div class="headerSection">
+              <h3>Packer</h3>
+            </div>
+            <div class="headerSection">
+              <h4 class="alignRight">Apr 2015 - Aug 2015</h4>
+            </div>
           </div>
           <div class="subsectionHeader">
             <h4>McVitie's, Manchester UK</h4>
@@ -79,8 +97,12 @@
         <h2>EDUCATION AND QUALIFICATIONS</h2>
         <section>
           <div class="subsectionHeader">
-            <h3>MSci Compute Science</h3>
-            <h4>Sep 2015 - May 2019</h4>
+            <div class="headerSection">
+              <h3>MSci Compute Science</h3>
+            </div>
+            <div class="headerSection">
+              <h4 class="alignRight">Sep 2015 - May 2019</h4>
+            </div>
           </div>
           <div class="subsectionHeader">
             <h4>King's College London, London</h4>
@@ -89,8 +111,12 @@
         </section>
         <section>
           <div class="subsectionHeader">
-            <h3>BTEC Software Development (iOS)</h3>
-            <h4>Sep 2013 - May 2015</h4>
+            <div class="headerSection">
+              <h3>BTEC Software Development (iOS)</h3>
+            </div>
+            <div class="headerSection">
+              <h4 class="alignRight">Sep 2013 - May 2015</h4>
+            </div>
           </div>
           <div class="subsectionHeader">
             <h4>Manchester College, Manchester</h4>

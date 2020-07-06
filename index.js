@@ -1,6 +1,9 @@
 const fs = require('fs');
 const path = require('path');
+const cheerio = require('cheerio');
 const express = require('express');
+var wkhtmltopdf = require('wkhtmltopdf');
+const { baseUrl } = require('./src/utils/url');
 
 const PORT = process.env.PORT || 3000
 const app = express();
@@ -11,22 +14,30 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/src/index.html'));
 });
 
-// var wkhtmltox = require("wkhtmltox");
-
-// instantiate a new converter.
-// var converter = new wkhtmltox();
+// app.get('/resume/preview', (req, res) => {
+//   console.log('here')
+//   let $ = cheerio.load(fs.readFileSync('src/index.html'));
+//
+//   let html = $.html();
+//   html = html.replace('css/style.css', baseUrl(req) + '/css/style.css')
+//   console.log('here')
+//
+//   wkhtmltopdf(html, { marginTop: '2mm', marginLeft: '8mm', marginRight: '8mm' })
+//     .pipe(res);
+// });
 
 app.get('/resume', (req, res) => {
-  // converter.pdf(fs.createReadStream('src/index.html'), { })
-  //     .pipe(res)
-  //     .on("finish", () => {
-  //       console.log('done')
-  //     });
+  let $ = cheerio.load(fs.readFileSync('src/index.html'));
+  $('body').addClass("whiteBackground");
+  let button = $('#downloadButton');
 
-  res.send('something')
+  let html = $.html();
+  html = html.replace('css/style.css', baseUrl(req) + '/css/style.css')
+  res.setHeader('Content-disposition', 'attachment; filename=OBuskoResume.pdf');
+
+  wkhtmltopdf(html, { marginTop: '2mm', marginLeft: '8mm', marginRight: '8mm' })
+    .pipe(res);
 });
-
-const server_host = '0.0.0.0';
 
 app.listen(PORT,  () => {
   console.log('Listening to port:', process.env.PORT || PORT);
