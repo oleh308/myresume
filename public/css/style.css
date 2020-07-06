@@ -22,6 +22,14 @@ body {
   border-bottom-left-radius: 10px;
 }
 
+#downloadButton:active {
+  outline: none;
+}
+
+#downloadButton:focus {
+  outline: none;
+}
+
 #downloadButton a {
   color: white;
   text-decoration: none;
@@ -40,9 +48,10 @@ body {
 }
 
 .icon {
+  width: 20px;
   height: 25px;
+  object-fit: contain;
   vertical-align: top;
-  font-size: 18px;
 }
 
 .topDetail {
@@ -65,16 +74,6 @@ body {
   width: 100%;
   margin-bottom: 5px;
 }
-/*
-.subsectionHeader h3 {
-  display: inline;
-  width: 50%;
-}
-
-.subsectionHeader h4 {
-  width: 100%;
-  background-color: red;
-} */
 
 .headerSection {
   width: 49%;
