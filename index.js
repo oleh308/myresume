@@ -24,8 +24,8 @@ app.get('/resume', (req, res) => {
       });
 });
 
+const server_host = '0.0.0.0';
 
-
-app.listen(PORT, () => {
-  console.log('Listening to port:', process.env.PORT || 5000);
+app.listen(PORT, server_host,  () => {
+  console.log('Listening to port:', process.env.PORT || PORT);
 });
