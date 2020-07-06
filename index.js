@@ -5,6 +5,12 @@ const express = require('express');
 var wkhtmltopdf = require('wkhtmltopdf');
 const { baseUrl } = require('./src/utils/url');
 
+
+if (process.env.NODE_ENV === 'production') {
+  wkhtmltopdf.shell = '/bin/ash';
+  console.log('here');
+}
+
 const PORT = process.env.PORT || 3000
 const app = express();
 
@@ -26,7 +32,7 @@ app.get('/', (req, res) => {
 //     .pipe(res);
 // });
 
-app.get('/resume', (req, res) => {
+app.get('/resume', async (req, res) => {
   let $ = cheerio.load(fs.readFileSync('src/index.html'));
   $('body').addClass("whiteBackground");
   let button = $('#downloadButton');
