@@ -27,5 +27,5 @@ app.get('/resume', (req, res) => {
 
 
 app.listen(PORT, () => {
-  console.log('Listening to port:', PORT);
+  console.log('Listening to port:', process.env.PORT || 5000);
 });
