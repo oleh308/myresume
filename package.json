@@ -19,7 +19,6 @@
   "homepage": "https://github.com/oleh308/myresume#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "html-pdf": "^2.2.0",
     "wkhtmltox": "^1.1.4"
   }
 }

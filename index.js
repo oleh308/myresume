@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const pdf = require('html-pdf');
 const express = require('express');
 
 const PORT = 3000;
@@ -18,21 +17,6 @@ var wkhtmltox = require("wkhtmltox");
 var converter = new wkhtmltox();
 
 app.get('/resume', (req, res) => {
-  // console.log(__dirname)
-  //
-  // const options = {
-  //   base: 'file:///' + __dirname + '/public'
-  // }
-  // console.log(options)
-  //
-  // const html = fs.readFileSync('./src/index.html', 'utf8');
-  // pdf.create(html, options).toBuffer(function(err, buffer) {
-  //   if (err) return console.log(err);
-  //
-  //   res.end(buffer);
-  // });
-  // res.sendFile()
-
   converter.pdf(fs.createReadStream('src/index.html'), { })
       .pipe(res)
       .on("finish", () => {
